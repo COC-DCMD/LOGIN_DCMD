@@ -260,10 +260,10 @@
     <p id="erroNova" class="msg"></p>
   </div>
 </div>
-<script src="https://coec-epb.github.io/login/auth.js"></script>
+<script src="https://coec-epb.github.io/LOGIN_DECP/auth.js"></script>
 <script>
   if (isLogged()) {
-  window.location.href = "https://coec-epb.github.io/ADD/";
+  window.location.href = "https://coec-epb.github.io/ADD_DECP/";
 }
 
 // guarda o token retornado do /recuperar_senha
@@ -381,7 +381,7 @@ async function salvarNovaSenha() {
     }
 
     fecharModal("modalPrimeiroAcesso");
-    window.location.href = "https://coec-epb.github.io/ADD/";
+    window.location.href = "https://coec-epb.github.io/ADD_DECP/";
 
   } catch (err) {
     erroSenha.innerText = "❌ Erro: " + err.message;
@@ -480,7 +480,7 @@ async function finalizarRecuperacao() {
   }
 }
 </script>
-   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ab3e837119ed4133bd616d3b06ef0e25"}'></script><!-- End Cloudflare Web Analytics -->
+   <!-- Cloudflare Web Analytics <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ab3e837119ed4133bd616d3b06ef0e25"}'></script><!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
