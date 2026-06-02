@@ -25,7 +25,7 @@ function isLogged() {
 
 function logout() {
   localStorage.clear();
-  window.location.href = "/login/";
+  window.location.href = "/LOGIN_DECP/";
 }
 
 async function authFetch(url, options = {}) {
