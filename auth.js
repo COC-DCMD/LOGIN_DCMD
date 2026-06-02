@@ -1,6 +1,6 @@
 // /js/auth.js
 
-const API = "https://long-hall-0aaa.pedro-fillype.workers.dev";
+const API = "https://add-decp.decpenergisa2026.workers.dev/";
 
 function getToken() {
   return localStorage.getItem("token");
@@ -53,7 +53,7 @@ async function authFetch(url, options = {}) {
     alert("🚫 USUÁRIO NÃO AUTORIZADO");
 
     // redireciona pro ADD
-    window.location.href = "https://coec-epb.github.io/ADD/";
+    window.location.href = "https://coec-epb.github.io/ADD_DECP/";
     return resp;
   }
 
