@@ -351,43 +351,22 @@ async function salvarNovaSenha() {
 
     const data = await resp.json();
 
-    if (!data.ok) {
-      erroSenha.innerText = "❌ " + (data.error || "Falha ao salvar senha");
-      return;
-    }
-
-    // 🔎 Busca dados completos do colaborador (incluindo regional)
-    try {
-      const colResp = await authFetch(
-  `${API}/colaborador?matricula=${encodeURIComponent(window.matriculaTemp)}`
-);
-      const colData = await colResp.json();
-
-      if (colData.ok && colData.dados) {
-        localStorage.setItem("matricula", colData.dados.matricula || window.matriculaTemp);
-        localStorage.setItem("usuarioLogado", "sim");
-        if (colData.dados.nome)     localStorage.setItem("nome", colData.dados.nome);
-        if (colData.dados.email)    localStorage.setItem("email", colData.dados.email);
-        if (colData.dados.regional) localStorage.setItem("regional", colData.dados.regional);
-      } else {
-        // fallback se der algo errado
-        localStorage.setItem("matricula", window.matriculaTemp);
-        localStorage.setItem("usuarioLogado", "sim");
-      }
-    } catch (e) {
-      // se der erro na busca, ao menos mantém login
-      localStorage.setItem("matricula", window.matriculaTemp);
-      localStorage.setItem("usuarioLogado", "sim");
-    }
-
-    fecharModal("modalPrimeiroAcesso");
-    window.location.href = "https://coec-epb.github.io/ADD_DECP/";
-
-  } catch (err) {
-    erroSenha.innerText = "❌ Erro: " + err.message;
-  }
+if (!data.ok) {
+  erroSenha.innerText = "❌ " + (data.error || "Falha ao salvar senha");
+  return;
 }
 
+localStorage.clear();
+
+fecharModal("modalPrimeiroAcesso");
+
+alert("✅ Senha alterada com sucesso. Faça login novamente.");
+
+window.location.href = "https://coec-epb.github.io/LOGIN_DECP/";
+
+} catch (err) {
+  erroSenha.innerText = "❌ Erro: " + err.message;
+}
 // ======= ESQUECI MINHA SENHA =======
 function abrirRecuperacao() {
   document.getElementById("erroRec").innerText = "";
