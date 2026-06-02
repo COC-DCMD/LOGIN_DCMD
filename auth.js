@@ -25,7 +25,8 @@ function isLogged() {
 
 function logout() {
   localStorage.clear();
-  window.location.href = "/LOGIN_DECP/";
+  window.location.href =
+    "https://coec-epb.github.io/LOGIN_DECP/";
 }
 
 async function authFetch(url, options = {}) {
