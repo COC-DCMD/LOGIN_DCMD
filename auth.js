@@ -1,6 +1,6 @@
 // /js/auth.js
 
-const API = "https://add-decp.decpenergisa2026.workers.dev/";
+const API = "https://add-decp.decpenergisa2026.workers.dev";
 
 function getToken() {
   return localStorage.getItem("token");
