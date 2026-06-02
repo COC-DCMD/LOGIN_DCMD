@@ -300,6 +300,7 @@ async function logar() {
     });
 
     const data = await resp.json();
+    console.log("LOGIN:", data);
 
     if (!data.ok) {
       erro.innerText = "❌ " + (data.error || "Matrícula ou senha incorreta!");
