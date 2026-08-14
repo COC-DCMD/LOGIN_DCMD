@@ -263,7 +263,7 @@
 <script src="https://coc-dcmd.github.io//LOGIN_DCMD/auth.js"></script>
 <script>
   if (isLogged()) {
-  window.location.href = "https://coc-dcmd.github.io/ADD_DCMD/";
+  window.location.href = "https://coc-dcmd.github.io/ADD_DCMD";
 }
 
 // guarda o token retornado do /recuperar_senha
@@ -317,7 +317,7 @@ async function logar() {
     // ✅ LOGIN NORMAL (CORRETO)
     setSession(data);
 
-    window.location.href = "https://coc-dcmd.github.io/ADD_DCMD/";
+    window.location.href = "https://coc-dcmd.github.io/ADD_DCMD";
 
   } catch (err) {
     erro.innerText = "❌ Erro: " + err.message;
@@ -363,7 +363,7 @@ fecharModal("modalPrimeiroAcesso");
 
 alert("✅ Senha alterada com sucesso. Faça login novamente.");
 
-window.location.href = "https://coc-dcmd.github.io/LOGIN_DCMD/";
+window.location.href = "https://coc-dcmd.github.io/LOGIN_DCMD";
 
 } catch (err) {
   erroSenha.innerText = "❌ Erro: " + err.message;
