@@ -1,4 +1,7 @@
-// /js/auth.js
+// ===============================
+// CONFIGURAÇÃO DA API
+// ===============================
+
 
 const API = "https://coc-dcdm-add.cocenergisa.workers.dev/";
 
@@ -26,7 +29,7 @@ function isLogged() {
 function logout() {
   localStorage.clear();
   window.location.href =
-    "https://coc-dcmd.github.io/LOGIN_DCMD/";
+    "https://coc-dcmd.github.io/Login-Leitura";
 }
 
 async function authFetch(url, options = {}) {
@@ -54,7 +57,7 @@ async function authFetch(url, options = {}) {
     alert("🚫 USUÁRIO NÃO AUTORIZADO");
 
     // redireciona pro ADD
-    window.location.href = "https://coc-dcmd.github.io/ADD_DCMD/";
+    window.location.href = "https://coc-dcmd.github.io/ADD_Leitura";
     return resp;
   }
 
