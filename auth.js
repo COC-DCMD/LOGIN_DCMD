@@ -3,7 +3,11 @@
 // ===============================
 
 
-const API = "https://coc-dcdm-add.cocenergisa.workers.dev/";
+const API = "https://coc-dcdm-add.cocenergisa.workers.dev";
+
+function apiUrl(path){
+    return `${API}/${path.replace(/^\/+/,'')}`;
+}
 
 function getToken() {
   return localStorage.getItem("token");
