@@ -293,7 +293,7 @@ async function logar() {
   }
 
   try {
-    const resp = await fetch(`${API}/login`, {
+    const resp = await fetch(apiUrl("/login"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ matricula, senha })
@@ -341,7 +341,7 @@ async function salvarNovaSenha() {
   }
 
   try {
-    const resp = await fetch(`${API}/trocar_senha`, {
+    const resp = await fetch(apiUrl("/trocar_senha"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -390,7 +390,7 @@ async function confirmarRecuperacao() {
   }
 
   try {
-    const resp = await fetch(`${API}/recuperar_senha`, {
+    const resp = await fetch(apiUrl("/recuperar_senha"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ matricula, cpf })
@@ -437,7 +437,7 @@ async function finalizarRecuperacao() {
   }
 
   try {
-    const resp = await fetch(`${API}/definir_nova_senha`, {
+    const resp = await fetch(apiUrl("/definir_nova_senha"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token: resetToken, novaSenha: nova })
