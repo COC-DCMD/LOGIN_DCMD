@@ -29,7 +29,7 @@ function isLogged() {
 function logout() {
   localStorage.clear();
   window.location.href =
-    "https://coc-dcmd.github.io/Login-Leitura";
+    "https://coc-dcmd.github.io/LOGIN_DCMD";
 }
 
 async function authFetch(url, options = {}) {
@@ -57,7 +57,7 @@ async function authFetch(url, options = {}) {
     alert("🚫 USUÁRIO NÃO AUTORIZADO");
 
     // redireciona pro ADD
-    window.location.href = "https://coc-dcmd.github.io/ADD_Leitura";
+    window.location.href = "https://coc-dcmd.github.io/ADD_DCMD";
     return resp;
   }
 
