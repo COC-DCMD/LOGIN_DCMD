@@ -2,11 +2,10 @@
 // CONFIGURAÇÃO DA API
 // ===============================
 
-
 const API = "https://coc-dcdm-add.cocenergisa.workers.dev";
 
-function apiUrl(path){
-    return `${API}/${path.replace(/^\/+/,'')}`;
+function apiUrl(path) {
+  return `${API.replace(/\/+$/, "")}/${String(path).replace(/^\/+/, "")}`;
 }
 
 function getToken() {
@@ -32,36 +31,45 @@ function isLogged() {
 
 function logout() {
   localStorage.clear();
+
   window.location.href =
     "https://coc-dcmd.github.io/LOGIN_DCMD";
 }
 
-async function authFetch(url, options = {}) {
+async function authFetch(path, options = {}) {
+
   const token = getToken();
 
   const headers = {
     ...(options.headers || {}),
-    "Authorization": `Bearer ${token}`
+    Authorization: `Bearer ${token}`
   };
+
+  const url = path.startsWith("http")
+    ? path
+    : apiUrl(path);
 
   const resp = await fetch(url, {
     ...options,
     headers
   });
 
-  // 🔥 NÃO AUTENTICADO
   if (resp.status === 401) {
+
     alert("Sessão expirada. Faça login novamente.");
+
     logout();
+
     return resp;
   }
 
-  // 🔥 NÃO AUTORIZADO (ADMIN)
   if (resp.status === 403) {
+
     alert("🚫 USUÁRIO NÃO AUTORIZADO");
 
-    // redireciona pro ADD
-    window.location.href = "https://coc-dcmd.github.io/ADD_DCMD";
+    window.location.href =
+      "https://coc-dcmd.github.io/ADD_DCMD";
+
     return resp;
   }
 
