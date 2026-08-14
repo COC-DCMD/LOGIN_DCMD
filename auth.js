@@ -26,7 +26,7 @@ function isLogged() {
 function logout() {
   localStorage.clear();
   window.location.href =
-    "https://coec-epb.github.io/LOGIN_DCMD/";
+    "https://coc-dcmd.github.io/LOGIN_DCMD/";
 }
 
 async function authFetch(url, options = {}) {
@@ -54,7 +54,7 @@ async function authFetch(url, options = {}) {
     alert("🚫 USUÁRIO NÃO AUTORIZADO");
 
     // redireciona pro ADD
-    window.location.href = "https://coec-epb.github.io/ADD_DCMD/";
+    window.location.href = "https://coc-dcmd.github.io/ADD_DCMD/";
     return resp;
   }
 
